@@ -5,6 +5,12 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ContactManager.Database", "ContactManager.Database\ContactManager.Database.sqlproj", "{A15E9863-D5C3-4767-A95E-0386B628C430}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManager.SqlRepositories", "ContactManager.SqlRepositories\ContactManager.SqlRepositories.csproj", "{7533DC55-A360-426E-A77A-949E5E56D140}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManager.SqlRepositoriesTests", "ContactManager.SqlRepositoriesTests\ContactManager.SqlRepositoriesTests.csproj", "{3EC6F784-F369-4177-B1DF-C6817639194A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManager.DomainModel", "ContactManager.DomainModel\ContactManager.DomainModel.csproj", "{2A78026C-DCEE-4972-9B0B-17EB88EC1AE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +23,18 @@ Global
 		{A15E9863-D5C3-4767-A95E-0386B628C430}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A15E9863-D5C3-4767-A95E-0386B628C430}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A15E9863-D5C3-4767-A95E-0386B628C430}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7533DC55-A360-426E-A77A-949E5E56D140}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7533DC55-A360-426E-A77A-949E5E56D140}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7533DC55-A360-426E-A77A-949E5E56D140}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7533DC55-A360-426E-A77A-949E5E56D140}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EC6F784-F369-4177-B1DF-C6817639194A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EC6F784-F369-4177-B1DF-C6817639194A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EC6F784-F369-4177-B1DF-C6817639194A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EC6F784-F369-4177-B1DF-C6817639194A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A78026C-DCEE-4972-9B0B-17EB88EC1AE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A78026C-DCEE-4972-9B0B-17EB88EC1AE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A78026C-DCEE-4972-9B0B-17EB88EC1AE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A78026C-DCEE-4972-9B0B-17EB88EC1AE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

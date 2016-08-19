@@ -64,4 +64,7 @@
   <ItemGroup>
     <RefactorLog Include="ContactManager.Database.refactorlog" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ContactManager.Database.publish.xml" />
+  </ItemGroup>
 </Project>

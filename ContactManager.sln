@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManager.SqlRepositor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManager.DomainModel", "ContactManager.DomainModel\ContactManager.DomainModel.csproj", "{2A78026C-DCEE-4972-9B0B-17EB88EC1AE8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManager.API", "ContactManager.API\ContactManager.API.csproj", "{C5305F80-DB80-4A5E-970E-5F4592B0C157}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManager.APITests", "ContactManager.APITests\ContactManager.APITests.csproj", "{292E258A-0654-497A-8BCE-9B9C2BE8AD60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +39,14 @@ Global
 		{2A78026C-DCEE-4972-9B0B-17EB88EC1AE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A78026C-DCEE-4972-9B0B-17EB88EC1AE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A78026C-DCEE-4972-9B0B-17EB88EC1AE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5305F80-DB80-4A5E-970E-5F4592B0C157}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5305F80-DB80-4A5E-970E-5F4592B0C157}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5305F80-DB80-4A5E-970E-5F4592B0C157}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5305F80-DB80-4A5E-970E-5F4592B0C157}.Release|Any CPU.Build.0 = Release|Any CPU
+		{292E258A-0654-497A-8BCE-9B9C2BE8AD60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{292E258A-0654-497A-8BCE-9B9C2BE8AD60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{292E258A-0654-497A-8BCE-9B9C2BE8AD60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{292E258A-0654-497A-8BCE-9B9C2BE8AD60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

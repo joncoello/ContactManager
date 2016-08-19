@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ContactManager.SqlRepositories;
+using System.Threading.Tasks;
 
 namespace ContactManager.SqlRepositoriesTests {
 
@@ -8,11 +9,11 @@ namespace ContactManager.SqlRepositoriesTests {
     public class ContactRepositoryTests {
 
         [TestMethod]
-        public void GetContacts_ReturnsList() {
+        public async Task GetContacts_ReturnsList() {
 
             var sut = new ContactRepository();
 
-            var results = sut.GetContacts();
+            var results = await sut.GetContactsAsync();
 
             Assert.IsNotNull(results);
 

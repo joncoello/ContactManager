@@ -11,10 +11,10 @@ namespace ContactManager.SqlRepositories {
 
     public class ContactRepository {
 
-        public IEnumerable<Contact> GetContacts() {
+        public async Task<IEnumerable<Contact>> GetContactsAsync() {
             using (var conn = new SqlConnection("server = . ; database = ContactManager ; user id = sa ; pwd = Afpftcb1td")) {
-                conn.Open();
-                return conn.Query<Contact>("select * from contact");
+                await conn.OpenAsync();
+                return await conn.QueryAsync<Contact>("select * from contact");
             }
         }
 

@@ -2,6 +2,7 @@
 using Dapper;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace ContactManager.SqlRepositories {
         public async Task<IEnumerable<Contact>> GetContactsAsync() {
             using (var conn = new SqlConnection("server = . ; database = ContactManager ; user id = sa ; pwd = Afpftcb1td")) {
                 await conn.OpenAsync();
-                return await conn.QueryAsync<Contact>("select * from contact");
+                return await conn.QueryAsync<Contact>("spGetContacts", commandType: CommandType.StoredProcedure);
             }
         }
 

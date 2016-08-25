@@ -4,6 +4,6 @@
     [FirstName] NVARCHAR(255) NULL, 
     [LastName] NVARCHAR(255) NOT NULL,
 
-	CONSTRAINT PK_Contact PRIMARY KEY NONCLUSTERED (ContactID),
+	CONSTRAINT PK_Contact PRIMARY KEY NONCLUSTERED (ContactId),
 	INDEX IX_Contact_LastName (LastName)
 )

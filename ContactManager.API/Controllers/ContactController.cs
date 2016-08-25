@@ -14,15 +14,19 @@ namespace ContactManager.API.Controllers
     [Route("api/contact")]
     public class ContactController : ApiController
     {
+
+        private readonly ContactRepository _contactRepository;
+
+        public ContactController(ContactRepository contactRepository) {
+            if (contactRepository == null) {
+                throw new ArgumentNullException("contactRepository");
+            }
+            _contactRepository = contactRepository;
+        }
+
         public async Task<IEnumerable<Contact>> Get() {
 
-            string connectionString = "server = . ; database = ContactManager ; user id = sa ; pwd = Afpftcb1td";
-
-            var sqlClient = new SQLClient(connectionString);
-
-            var sut = new ContactRepository(sqlClient);
-
-            var results = await sut.GetContactsAsync();
+            var results = await _contactRepository.GetContactsAsync();
 
             return results;
         }

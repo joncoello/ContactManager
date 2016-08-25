@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManager.API", "Conta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManager.APITests", "ContactManager.APITests\ContactManager.APITests.csproj", "{292E258A-0654-497A-8BCE-9B9C2BE8AD60}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCH.BCL", "CCH.BCL\CCH.BCL.csproj", "{1A41EC29-BF29-45D0-AA38-141D5919B462}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{292E258A-0654-497A-8BCE-9B9C2BE8AD60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{292E258A-0654-497A-8BCE-9B9C2BE8AD60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{292E258A-0654-497A-8BCE-9B9C2BE8AD60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A41EC29-BF29-45D0-AA38-141D5919B462}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A41EC29-BF29-45D0-AA38-141D5919B462}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A41EC29-BF29-45D0-AA38-141D5919B462}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A41EC29-BF29-45D0-AA38-141D5919B462}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

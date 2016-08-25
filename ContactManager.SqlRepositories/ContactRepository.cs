@@ -1,4 +1,5 @@
-﻿using ContactManager.DomainModel.Models;
+﻿using CCH.BCL.Data;
+using ContactManager.DomainModel.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,13 +9,20 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ContactManager.SqlRepositories {
-
+    
     public class ContactRepository {
 
+        private readonly ISQLClient _sqlClient;
+
+        public ContactRepository(ISQLClient sqlClient) {
+            if (sqlClient == null) {
+                throw new ArgumentNullException("sqlClient");
+            }
+            _sqlClient = sqlClient;
+        }
+
         public async Task<IEnumerable<Contact>> GetContactsAsync() {
-            string connectionString = "server = . ; database = ContactManager ; user id = sa ; pwd = Afpftcb1td";
-            var client = new CCH.BCL.Data.SQLClient(connectionString);
-            return await client.RunSpReturnGraph<Contact>("spGetContacts");
+            return await _sqlClient.RunSpReturnGraph<Contact>("spGetContacts");
         }
 
     }

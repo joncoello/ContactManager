@@ -54,6 +54,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CCH.BCL\CCH.BCL.csproj">
+      <Project>{1A41EC29-BF29-45D0-AA38-141D5919B462}</Project>
+      <Name>CCH.BCL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ContactManager.DomainModel\ContactManager.DomainModel.csproj">
       <Project>{2a78026c-dcee-4972-9b0b-17eb88ec1ae8}</Project>
       <Name>ContactManager.DomainModel</Name>

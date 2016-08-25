@@ -107,11 +107,25 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HelloController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CCH.BCL\CCH.BCL.csproj">
+      <Project>{1a41ec29-bf29-45d0-aa38-141d5919b462}</Project>
+      <Name>CCH.BCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ContactManager.DomainModel\ContactManager.DomainModel.csproj">
+      <Project>{2a78026c-dcee-4972-9b0b-17eb88ec1ae8}</Project>
+      <Name>ContactManager.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ContactManager.SqlRepositories\ContactManager.SqlRepositories.csproj">
+      <Project>{7533dc55-a360-426e-a77a-949e5e56d140}</Project>
+      <Name>ContactManager.SqlRepositories</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

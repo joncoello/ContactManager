@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\ISQLClient.cs" />
     <Compile Include="Data\SQLClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ContactManager.SqlRepositories;
 using System.Threading.Tasks;
+using CCH.BCL.Data;
 
 namespace ContactManager.SqlRepositoriesTests {
 
@@ -11,7 +12,11 @@ namespace ContactManager.SqlRepositoriesTests {
         [TestMethod]
         public async Task GetContacts_ReturnsList() {
 
-            var sut = new ContactRepository();
+            string connectionString = "server = . ; database = ContactManager ; user id = sa ; pwd = Afpftcb1td";
+
+            var sqlClient = new CCH.BCL.Data.SQLClient(connectionString);
+
+            var sut = new ContactRepository(sqlClient);
 
             var results = await sut.GetContactsAsync();
 

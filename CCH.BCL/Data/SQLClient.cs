@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CCH.BCL.Data {
-    public class SQLClient {
+    public class SQLClient : ISQLClient {
 
         private readonly string _connectionString;
 

@@ -24,6 +24,24 @@ namespace ContactManager.SqlRepositoriesTests {
 
         }
 
+        [TestMethod]
+        public async Task InsertContact_UpdatesID() {
+
+            string connectionString = "server = . ; database = ContactManager ; user id = sa ; pwd = Afpftcb1td";
+
+            var sqlClient = new CCH.BCL.Data.SQLClient(connectionString);
+
+            var sut = new ContactRepository(sqlClient);
+
+            var result = await sut.InsertContactAsync(new DomainModel.Models.Contact() {
+                FirstName = "Brian",
+                LastName = "White"
+            });
+
+            Assert.AreNotEqual(0, result.ContactID);
+
+        }
+
     }
 
 }

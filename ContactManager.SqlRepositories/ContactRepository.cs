@@ -25,6 +25,10 @@ namespace ContactManager.SqlRepositories {
             return await _sqlClient.RunSpReturnGraph<Contact>("spGetContacts");
         }
 
+        public async Task<Contact> InsertContactAsync(Contact contact) {
+            return await _sqlClient.RunSpReturnSingle<Contact>("spInsertContact", new { FirstName = contact.FirstName, LastName = contact.LastName } );
+        }
+
     }
 
 }

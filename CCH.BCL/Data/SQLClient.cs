@@ -22,5 +22,12 @@ namespace CCH.BCL.Data {
             }
         }
 
+        public async Task<T> RunSpReturnSingle<T>(string storedProcedureName, object parameters) {
+            using (var conn = new SqlConnection(_connectionString)) {
+                await conn.OpenAsync();
+                return conn.QuerySingle<T>(storedProcedureName, commandType: System.Data.CommandType.StoredProcedure, param: parameters);
+            }
+        }
+
     }
 }

@@ -1,16 +1,20 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using ContactManager.API;
 using Microsoft.Owin.Hosting;
-using ContactManager.API;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ContactManager.APITests {
 
     [TestClass]
-    public class ContactAPITests {
+    public class HelloAPITests {
 
         [TestMethod]
-        public void API_Contact_Get() {
+        public void API_Hello_Get() {
 
             string baseAddress = "http://localhost:9000/";
 
@@ -18,7 +22,7 @@ namespace ContactManager.APITests {
 
                 var client = new HttpClient();
 
-                var response = client.GetAsync(baseAddress + "api/contact").Result;
+                var response = client.GetAsync(baseAddress + "api/hello").Result;
 
                 var result = response.Content.ReadAsStringAsync().Result;
 
@@ -29,5 +33,4 @@ namespace ContactManager.APITests {
         }
 
     }
-
 }

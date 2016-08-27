@@ -10,7 +10,7 @@ namespace ContactManager.SqlRepositoriesTests {
     public class ContactRepositoryTests {
 
         [TestMethod]
-        public async Task GetContacts_ReturnsList() {
+        public async Task Repo_GetContacts_ReturnsList() {
 
             string connectionString = "server = . ; database = ContactManager ; user id = sa ; pwd = Afpftcb1td";
 
@@ -25,7 +25,7 @@ namespace ContactManager.SqlRepositoriesTests {
         }
 
         [TestMethod]
-        public async Task InsertContact_UpdatesID() {
+        public async Task Repo_InsertContact_UpdatesID() {
 
             string connectionString = "server = . ; database = ContactManager ; user id = sa ; pwd = Afpftcb1td";
 

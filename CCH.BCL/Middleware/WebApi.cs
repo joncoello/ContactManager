@@ -10,13 +10,13 @@ using System.Web.Http;
 
 namespace CCH.BCL.Middleware {
     public static class WebApi {
-        public static void UseCchWebApi(this IAppBuilder app, HttpConfiguration config, Assembly assembly, params Type[] typesToRegister) {
+        public static void UseCchWebApi(this IAppBuilder app, HttpConfiguration config, Assembly controllersAssembly, params Type[] typesToRegister) {
 
             //IoC
             var factory = new IocContainerFactory();
             var container = factory.Create(config);
 
-            container.RegisterApiControllers(assembly);
+            container.RegisterApiControllers(controllersAssembly);
             container.RegisterFilters();
 
             string connectionString = "server = . ; database = ContactManager ; user id = sa ; pwd = Afpftcb1td";
@@ -28,7 +28,7 @@ namespace CCH.BCL.Middleware {
 
             // web api
             config.MapHttpAttributeRoutes();
-            
+
         }
     }
 }

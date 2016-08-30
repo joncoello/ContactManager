@@ -19,13 +19,16 @@ namespace ContactManager.API {
 
         public void Configuration(IAppBuilder app) {
 
-            // use attribute routing
             var config = new HttpConfiguration();
 
-            app.UseCchWebApi(config, this.GetType().Assembly, typeof(ContactRepository));
+            app.UseCchWebApi(
+                config: config,
+                controllersAssembly: this.GetType().Assembly,
+                typesToRegister:
+                    typeof(ContactRepository)
+                );
 
-            app.UseWebApi(config);  
-     
+            app.UseWebApi(config);
         }
 
     }

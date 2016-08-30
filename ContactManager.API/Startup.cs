@@ -1,6 +1,5 @@
-﻿using Autofac;
-using Autofac.Integration.WebApi;
-using CCH.BCL.Data;
+﻿using CCH.BCL.Data;
+using CCH.BCL.Infrastructure;
 using ContactManager.SqlRepositories;
 using Owin;
 using System;
@@ -22,22 +21,17 @@ namespace ContactManager.API {
             // use attribute routing
             var config = new HttpConfiguration();
 
-            // IoC - autofac
-            var builder = new ContainerBuilder();
-            builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
-            builder.RegisterWebApiFilterProvider(config);
-
-            // custom types
+            //IoC
+            var factory = new IocContainerFactory();
+            var container = factory.Create(config);
+            container.RegisterApiControllers(this.GetType().Assembly);
+            container.RegisterFilters();
             string connectionString = "server = . ; database = ContactManager ; user id = sa ; pwd = Afpftcb1td";
-            builder.RegisterType<SQLClient>()
-                .As<ISQLClient>()
-                .WithParameter("connectionString", connectionString);
-
-            builder.RegisterType<ContactRepository>().AsSelf();
-
-            var container = builder.Build();
-            config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
-
+            container.RegisterSqlClient(connectionString);
+            container.RegisterType<ContactRepository>();
+            container.Build();
+            config.DependencyResolver = container.GetResolver();
+            
             // web api
             config.MapHttpAttributeRoutes();
             app.UseWebApi(config);  

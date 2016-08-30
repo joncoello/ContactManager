@@ -1,15 +1,14 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ContactManager.SqlRepositories;
 using System.Threading.Tasks;
 using CCH.BCL.Data;
+using Xunit;
 
 namespace ContactManager.SqlRepositoriesTests {
 
-    [TestClass]
     public class ContactRepositoryTests {
 
-        [TestMethod]
+        [Fact]
         public async Task Repo_GetContacts_ReturnsList() {
 
             string connectionString = "server = . ; database = ContactManager ; user id = sa ; pwd = Afpftcb1td";
@@ -20,11 +19,11 @@ namespace ContactManager.SqlRepositoriesTests {
 
             var results = await sut.GetContactsAsync();
 
-            Assert.IsNotNull(results);
+            Assert.NotNull(results);
 
         }
 
-        [TestMethod]
+        [Fact]
         public async Task Repo_InsertContact_UpdatesID() {
 
             string connectionString = "server = . ; database = ContactManager ; user id = sa ; pwd = Afpftcb1td";
@@ -38,7 +37,7 @@ namespace ContactManager.SqlRepositoriesTests {
                 LastName = "White"
             });
 
-            Assert.AreNotEqual(0, result.ContactID);
+            Assert.NotEqual(0, result.ContactID);
 
         }
 

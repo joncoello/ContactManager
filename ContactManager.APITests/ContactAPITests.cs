@@ -1,15 +1,14 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Owin.Hosting;
 using ContactManager.API;
 using System.Net.Http;
+using Xunit;
 
 namespace ContactManager.APITests {
-
-    [TestClass]
+    
     public class ContactAPITests {
 
-        [TestMethod]
+        [Fact]
         public void API_Contact_Get() {
 
             string baseAddress = "http://localhost:9000/";
@@ -22,7 +21,7 @@ namespace ContactManager.APITests {
 
                 var result = response.Content.ReadAsStringAsync().Result;
 
-                Assert.AreEqual("\"hello world\"", result);
+                Assert.Equal("\"hello world\"", result);
 
             }
 

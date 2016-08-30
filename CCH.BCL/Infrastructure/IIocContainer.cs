@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
 using System.Web.Http.Dependencies;
 
 namespace CCH.BCL.Infrastructure {
@@ -9,5 +10,7 @@ namespace CCH.BCL.Infrastructure {
         void RegisterFilters();
         void RegisterSqlClient(string connectionString);
         void RegisterType<T>();
+        void RegisterType(Type t);
+
     }
 }

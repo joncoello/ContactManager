@@ -43,6 +43,11 @@ namespace CCH.BCL.Infrastructure {
             //builder.RegisterType<ContactRepository>().AsSelf();
         }
 
+        public void RegisterType(Type t) {
+            builder.RegisterType(t).AsSelf();
+            //builder.RegisterType<ContactRepository>().AsSelf();
+        }
+
         public void Build() {
             container = builder.Build();
         }

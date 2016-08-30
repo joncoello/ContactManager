@@ -4,6 +4,7 @@ using ContactManager.API;
 using System.Net.Http;
 using Xunit;
 using CCH.BCL.Test;
+using System.Net;
 
 namespace ContactManager.APITests {
     
@@ -19,10 +20,8 @@ namespace ContactManager.APITests {
                 var client = new HttpClient();
 
                 var response = client.GetAsync(baseAddress + "api/contact").Result;
-
-                var result = response.Content.ReadAsStringAsync().Result;
-
-                Assert.Equal("\"hello world\"", result);
+                
+                Assert.Equal(HttpStatusCode.OK, response.StatusCode);
 
             }
 

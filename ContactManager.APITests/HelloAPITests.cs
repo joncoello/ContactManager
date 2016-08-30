@@ -1,4 +1,5 @@
-﻿using ContactManager.API;
+﻿using CCH.BCL.Test;
+using ContactManager.API;
 using Microsoft.Owin.Hosting;
 using System;
 using System.Collections.Generic;
@@ -12,10 +13,10 @@ namespace ContactManager.APITests {
 
     public class HelloAPITests {
 
-        [Fact]
+        [Fact, UseDatabase]
         public void API_Hello_Get() {
 
-            string baseAddress = "http://localhost:9000/";
+            string baseAddress = "http://localhost:9001/";
 
             using (WebApp.Start<Startup>(baseAddress)) {
 

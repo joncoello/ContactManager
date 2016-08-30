@@ -3,12 +3,13 @@ using Microsoft.Owin.Hosting;
 using ContactManager.API;
 using System.Net.Http;
 using Xunit;
+using CCH.BCL.Test;
 
 namespace ContactManager.APITests {
     
     public class ContactAPITests {
 
-        [Fact]
+        [Fact, UseDatabase]
         public void API_Contact_Get() {
 
             string baseAddress = "http://localhost:9000/";

@@ -113,6 +113,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CCH.BCL\CCH.BCL.csproj">
+      <Project>{1A41EC29-BF29-45D0-AA38-141D5919B462}</Project>
+      <Name>CCH.BCL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ContactManager.API\ContactManager.API.csproj">
       <Project>{c5305f80-db80-4a5e-970e-5f4592b0c157}</Project>
       <Name>ContactManager.API</Name>

@@ -11,11 +11,7 @@ namespace ContactManager.SqlRepositoriesTests {
         [Fact]
         public async Task Repo_GetContacts_ReturnsList() {
 
-            string connectionString = "server = . ; database = ContactManager ; user id = sa ; pwd = Afpftcb1td";
-
-            var sqlClient = new CCH.BCL.Data.SQLClient(connectionString);
-
-            var sut = new ContactRepository(sqlClient);
+            var sut = BuildContactRepository();
 
             var results = await sut.GetContactsAsync();
 
@@ -26,11 +22,7 @@ namespace ContactManager.SqlRepositoriesTests {
         [Fact]
         public async Task Repo_InsertContact_UpdatesID() {
 
-            string connectionString = "server = . ; database = ContactManager ; user id = sa ; pwd = Afpftcb1td";
-
-            var sqlClient = new CCH.BCL.Data.SQLClient(connectionString);
-
-            var sut = new ContactRepository(sqlClient);
+            var sut = BuildContactRepository();
 
             var result = await sut.InsertContactAsync(new DomainModel.Models.Contact() {
                 FirstName = "Brian",
@@ -38,6 +30,18 @@ namespace ContactManager.SqlRepositoriesTests {
             });
 
             Assert.NotEqual(0, result.ContactID);
+
+        }
+
+        private ContactRepository BuildContactRepository() {
+
+            string connectionString = "server = . ; database = ContactManager ; user id = sa ; pwd = Afpftcb1td";
+
+            var sqlClient = new CCH.BCL.Data.SQLClient(connectionString);
+
+            var sut = new ContactRepository(sqlClient);
+
+            return sut;
 
         }
 

@@ -121,6 +121,10 @@
       <Project>{c5305f80-db80-4a5e-970e-5f4592b0c157}</Project>
       <Name>ContactManager.API</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ContactManager.DomainModel\ContactManager.DomainModel.csproj">
+      <Project>{2a78026c-dcee-4972-9b0b-17eb88ec1ae8}</Project>
+      <Name>ContactManager.DomainModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

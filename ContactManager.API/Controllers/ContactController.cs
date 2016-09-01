@@ -9,11 +9,9 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace ContactManager.API.Controllers
-{
+namespace ContactManager.API.Controllers {
     [Route("api/contact")]
-    public class ContactController : ApiController
-    {
+    public class ContactController : ApiController {
 
         private readonly ContactRepository _contactRepository;
 
@@ -24,11 +22,21 @@ namespace ContactManager.API.Controllers
             _contactRepository = contactRepository;
         }
 
-        public async Task<IEnumerable<Contact>> Get() {
-
+        public async Task<IHttpActionResult> Get() {
             var results = await _contactRepository.GetContactsAsync();
+            return Ok<IEnumerable<Contact>>(results);
+        }
 
-            return results;
+        [Route("api/contact/{id}")]
+        public async Task<IHttpActionResult> Get(int id) {
+            //int contactID = Convert.ToInt32(id);
+            var results = await _contactRepository.GetContactsAsync();
+            return Ok<Contact>(results.FirstOrDefault(c => c.ContactID == id));
+        }
+
+        public async Task<IHttpActionResult> Post([FromBody]Contact contact) {
+            var result = await _contactRepository.InsertContactAsync(contact);
+            return Created<Contact>("", result);
         }
 
     }

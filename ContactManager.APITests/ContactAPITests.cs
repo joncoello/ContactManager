@@ -7,14 +7,13 @@ using CCH.BCL.Test;
 using System.Net;
 using Newtonsoft.Json;
 using ContactManager.DomainModel.Models;
+using System.Configuration;
 
 namespace ContactManager.APITests {
     
     public class ContactAPITests {
-
-        private const string TEST_CONNECTION_STRING = "server = . ; database = ContactManager ; user id = sa ; pwd = Afpftcb1td";
-
-        [Fact, UseDatabase(TEST_CONNECTION_STRING)]
+        
+        [Fact, UseDatabase]
         public void API_Contact_CreateThenGet() {
 
             string baseAddress = "http://localhost:9000/";

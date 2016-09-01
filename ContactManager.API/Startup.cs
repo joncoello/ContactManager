@@ -5,6 +5,7 @@ using ContactManager.SqlRepositories;
 using Owin;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Reflection;
 using System.Web;
@@ -21,8 +22,10 @@ namespace ContactManager.API {
 
             var config = new HttpConfiguration();
 
+            string connectionString = ConfigurationManager.ConnectionStrings["contactManager"].ConnectionString;
+
             app.UseCchWebApi(
-                connectionString: "server = . ; database = ContactManager ; user id = sa ; pwd = Afpftcb1td",
+                connectionString: connectionString,
                 httpConfig: config,
                 controllersAssembly: this.GetType().Assembly,
                 typesToRegister:

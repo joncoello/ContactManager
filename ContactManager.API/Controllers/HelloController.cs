@@ -7,6 +7,9 @@ using System.Web.Http;
 
 namespace ContactManager.API.Controllers
 {
+    /// <summary>
+    /// hello world
+    /// </summary>
     [Route("api/hello")]
     public class HelloController : ApiController
     {

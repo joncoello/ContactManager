@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
@@ -13,17 +14,12 @@ namespace CCH.BCL.Test {
     /// test attribute to use test database
     /// </summary>
     public class UseDatabaseAttribute : BeforeAfterTestAttribute {
-
-        private readonly string _connectionString;
-
-        public UseDatabaseAttribute(string connectionString) {
-            _connectionString = connectionString;
-        }
-
+        
         public override void Before(MethodInfo methodUnderTest) {
 
-            //string connectionString = "server = . ; database = ContactManager ; user id = sa ; pwd = Afpftcb1td";
-            using (var conn = new SqlConnection(_connectionString)) {
+            string connectionString = ConfigurationManager.ConnectionStrings["contactManager"].ConnectionString;
+            
+            using (var conn = new SqlConnection(connectionString)) {
 
                 conn.Open();
 

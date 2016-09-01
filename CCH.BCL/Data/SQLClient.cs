@@ -7,6 +7,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CCH.BCL.Data {
+
+    /// <summary>
+    /// Sql client ussing dapper
+    /// </summary>
     public class SQLClient : ISQLClient {
 
         private readonly string _connectionString;
@@ -25,7 +29,7 @@ namespace CCH.BCL.Data {
         public async Task<T> RunSpReturnSingle<T>(string storedProcedureName, object parameters) {
             using (var conn = new SqlConnection(_connectionString)) {
                 await conn.OpenAsync();
-                return conn.QuerySingle<T>(storedProcedureName, commandType: System.Data.CommandType.StoredProcedure, param: parameters);
+                return await conn.QuerySingleAsync<T>(storedProcedureName, commandType: System.Data.CommandType.StoredProcedure, param: parameters);
             }
         }
 

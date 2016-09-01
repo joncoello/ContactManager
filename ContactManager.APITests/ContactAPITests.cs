@@ -11,8 +11,10 @@ using ContactManager.DomainModel.Models;
 namespace ContactManager.APITests {
     
     public class ContactAPITests {
-        
-        [Fact, UseDatabase]
+
+        private const string TEST_CONNECTION_STRING = "server = . ; database = ContactManager ; user id = sa ; pwd = Afpftcb1td";
+
+        [Fact, UseDatabase(TEST_CONNECTION_STRING)]
         public void API_Contact_CreateThenGet() {
 
             string baseAddress = "http://localhost:9000/";

@@ -22,7 +22,8 @@ namespace ContactManager.API {
             var config = new HttpConfiguration();
 
             app.UseCchWebApi(
-                config: config,
+                connectionString: "server = . ; database = ContactManager ; user id = sa ; pwd = Afpftcb1td",
+                httpConfig: config,
                 controllersAssembly: this.GetType().Assembly,
                 typesToRegister:
                     typeof(ContactRepository)

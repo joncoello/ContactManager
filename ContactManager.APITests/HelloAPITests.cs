@@ -13,7 +13,7 @@ namespace ContactManager.APITests {
 
     public class HelloAPITests {
 
-        [Fact, UseDatabase]
+        [Fact]
         public void API_Hello_Get() {
 
             string baseAddress = "http://localhost:9001/";

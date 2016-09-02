@@ -57,16 +57,20 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Tables" />
+    <Folder Include="SPs" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Contact.sql" />
-    <Build Include="spGetContacts.sql" />
-    <Build Include="spInsertContact.sql" />
+    <Build Include="Tables\Contact.sql" />
+    <Build Include="SPs\spGetContacts.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="ContactManager.Database.refactorlog" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ContactManager.Database.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="SPs\spInsertContact.sql" />
   </ItemGroup>
 </Project>

@@ -3,6 +3,7 @@ using Owin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,6 +39,9 @@ namespace CCH.BCL.Middleware {
 
             // web api
             httpConfig.MapHttpAttributeRoutes();
+
+            //formatting
+            httpConfig.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
 
         }
     }

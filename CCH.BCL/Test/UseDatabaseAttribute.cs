@@ -15,18 +15,23 @@ namespace CCH.BCL.Test {
     /// </summary>
     public class UseDatabaseAttribute : BeforeAfterTestAttribute {
         
-        public override void Before(MethodInfo methodUnderTest) {
+        public async override void Before(MethodInfo methodUnderTest) {
 
             string connectionString = ConfigurationManager.ConnectionStrings["contactManager"].ConnectionString;
             
             using (var conn = new SqlConnection(connectionString)) {
 
-                conn.Open();
+                await conn.OpenAsync();
 
+                // delete data
                 using (var command = new SqlCommand("delete from Contact", conn)) {
+                    await command.ExecuteNonQueryAsync();
+                }
 
-                    command.ExecuteNonQuery();
-
+                //insert test data
+                string sql = CCH.BCL.Properties.Resources.InsertContactData;
+                using (var command = new SqlCommand(sql, conn)) {
+                    await command.ExecuteNonQueryAsync();
                 }
 
             }

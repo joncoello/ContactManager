@@ -1,5 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[spGetContacts]
-	
+	@Offset int = 0,
+	@PageSize int = 20
 AS
 	SELECT 
 		ContactId,
@@ -9,6 +10,6 @@ AS
 		Contact
 	order by
 		LastName, FirstName
-	Offset 0 Rows
-	Fetch Next 10 Rows Only
+	Offset @Offset Rows
+	Fetch Next @PageSize Rows Only
 

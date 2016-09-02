@@ -1,4 +1,5 @@
 ﻿using CCH.BCL.Data;
+using CCH.BCL.Extensions;
 using ContactManager.DomainModel.Models;
 using ContactManager.SqlRepositories;
 using System;
@@ -27,14 +28,19 @@ namespace ContactManager.API.Controllers {
         }
 
         [Route("")]
-        public async Task<IHttpActionResult> Get() {
-            var results = await _contactRepository.GetContactsAsync();
-            return Ok<IEnumerable<Contact>>(results);
+        public async Task<IHttpActionResult> Get(int page = 0, int pageSize = 20) {
+
+            int offset = page * pageSize;
+            var results = await _contactRepository.GetContactsAsync(offset, pageSize);
+            
+            var responseBody = results.GetResponseBody(Request.RequestUri.AbsolutePath, page, pageSize);
+
+            return Ok(responseBody);
         }
 
         [Route("{id}")]
         public async Task<IHttpActionResult> Get(int id) {
-            var results = await _contactRepository.GetContactsAsync();
+            var results = await _contactRepository.GetContactsAsync(0, 20);
             return Ok<Contact>(results.FirstOrDefault(c => c.ContactID == id));
         }
 
@@ -43,6 +49,7 @@ namespace ContactManager.API.Controllers {
             var result = await _contactRepository.InsertContactAsync(contact);
             return Created<Contact>("", result);
         }
-
+        
     }
+
 }

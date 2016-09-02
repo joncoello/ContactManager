@@ -3,6 +3,7 @@ using Owin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Reflection;
 using System.Text;
@@ -42,6 +43,9 @@ namespace CCH.BCL.Middleware {
 
             //formatting
             httpConfig.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+
+            //httpConfig.Formatters.Clear();
+            //httpConfig.Formatters.Add(new JsonMediaTypeFormatter());
 
         }
     }

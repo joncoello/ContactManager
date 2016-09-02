@@ -13,7 +13,7 @@ namespace ContactManager.SqlRepositoriesTests {
 
             var sut = BuildContactRepository();
 
-            var results = await sut.GetContactsAsync();
+            var results = await sut.GetContactsAsync(0, 20);
 
             Assert.NotNull(results);
 

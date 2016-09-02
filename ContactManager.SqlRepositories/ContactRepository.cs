@@ -21,8 +21,8 @@ namespace ContactManager.SqlRepositories {
             _sqlClient = sqlClient;
         }
 
-        public async Task<IEnumerable<Contact>> GetContactsAsync() {
-            return await _sqlClient.RunSpReturnGraph<Contact>("spGetContacts");
+        public async Task<IEnumerable<Contact>> GetContactsAsync(int offset, int pageSize) {
+            return await _sqlClient.RunSpReturnGraph<Contact>("spGetContacts", new { Offset = offset, PageSize = pageSize });
         }
 
         public async Task<Contact> InsertContactAsync(Contact contact) {

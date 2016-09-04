@@ -34,8 +34,8 @@ namespace ContactManager.API.Controllers {
 
         [Route("{id}")]
         public async Task<IHttpActionResult> Get(int id) {
-            var results = await _contactRepository.GetContactsAsync();
-            return Ok<Contact>(results.FirstOrDefault(c => c.ContactID == id));
+            var result = await _contactRepository.GetContactAsync(id);
+            return Ok<Contact>(result);
         }
 
         [Route("")]

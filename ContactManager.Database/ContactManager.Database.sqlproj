@@ -63,6 +63,7 @@
   <ItemGroup>
     <Build Include="Tables\Contact.sql" />
     <Build Include="SPs\spGetContacts.sql" />
+    <Build Include="SPs\spGetContact.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="ContactManager.Database.refactorlog" />

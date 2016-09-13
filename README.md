@@ -1,5 +1,4 @@
-# Angular 2 QuickStart Source
-[![Build Status][travis-badge]][travis-badge-url]
+# Server side development standards - data api
 
 This repository holds the example defining server side development standards for a data API
 

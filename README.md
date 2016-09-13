@@ -17,3 +17,13 @@ This repository holds the example defining server side development standards for
 - IoC: Autofac ?
 - Unit Testing: Xunit
 - Middleware: WebApi
+
+Use paging extension in controller
+```bash
+int offset = page * pageSize;
+var results = await _contactRepository.GetContactsAsync(offset, pageSize);
+            
+var responseBody = results.GetResponseBody(Request.RequestUri.AbsolutePath, page, pageSize);
+
+return Ok(responseBody);
+```

@@ -19,7 +19,8 @@ This repository holds the example defining server side development standards for
 - Middleware: WebApi
 
 ###Use paging extension in controller
-```CSharp int offset = page * pageSize;
+```CSharp 
+int offset = page * pageSize;
 var results = await _contactRepository.GetContactsAsync(offset, pageSize);
             
 var responseBody = results.GetResponseBody(Request.RequestUri.AbsolutePath, page, pageSize);
@@ -28,7 +29,8 @@ return Ok(responseBody);
 ```
 
 ###Extension code
-```CSharp public static object GetResponseBody<T>(this IEnumerable<T> data, string basePath, int page, int pageSize) {
+```CSharp
+public static object GetResponseBody<T>(this IEnumerable<T> data, string basePath, int page, int pageSize) {
 
     int prevPage = page == 0 ? 0 : page - 1;
 

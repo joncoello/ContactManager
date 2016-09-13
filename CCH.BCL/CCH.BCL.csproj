@@ -91,6 +91,7 @@
   <ItemGroup>
     <Compile Include="Data\ISQLClient.cs" />
     <Compile Include="Data\SQLClient.cs" />
+    <Compile Include="Data\TransientFaultHandlingSQLClient.cs" />
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Infrastructure\IIocContainer.cs" />
     <Compile Include="Infrastructure\IocContainer.cs" />

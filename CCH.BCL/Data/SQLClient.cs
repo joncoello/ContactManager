@@ -19,14 +19,14 @@ namespace CCH.BCL.Data {
             _connectionString = connectionString;
         }
 
-        public async Task<IEnumerable<T>> RunSpReturnGraph<T>(string storedProcedureName, object parameters) {
+        public async Task<IEnumerable<T>> RunSpReturnGraph<T>(string storedProcedureName, object parameters) where T : class {
             using (var conn = new SqlConnection(_connectionString)) {
                 await conn.OpenAsync();
                 return await conn.QueryAsync<T>(storedProcedureName, commandType: System.Data.CommandType.StoredProcedure, param: parameters);
             }
         }
 
-        public async Task<T> RunSpReturnSingle<T>(string storedProcedureName, object parameters) {
+        public async Task<T> RunSpReturnSingle<T>(string storedProcedureName, object parameters) where T : class {
             using (var conn = new SqlConnection(_connectionString)) {
                 await conn.OpenAsync();
                 return await conn.QuerySingleAsync<T>(storedProcedureName, commandType: System.Data.CommandType.StoredProcedure, param: parameters);

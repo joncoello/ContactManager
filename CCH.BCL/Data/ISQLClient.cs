@@ -8,7 +8,7 @@ namespace CCH.BCL.Data {
     /// main interface for client to SQL
     /// </summary>
     public interface ISQLClient {
-        Task<IEnumerable<T>> RunSpReturnGraph<T>(string storedProcedureName, object parameters);
-        Task<T> RunSpReturnSingle<T>(string storedProcedureName, object parameters);
+        Task<IEnumerable<T>> RunSpReturnGraph<T>(string storedProcedureName, object parameters) where T : class;
+        Task<T> RunSpReturnSingle<T>(string storedProcedureName, object parameters) where T : class;
     }
 }

@@ -25,6 +25,11 @@ namespace ContactManager.SqlRepositories {
             return await _sqlClient.RunSpReturnGraph<Contact>("spGetContacts", new { Offset = offset, PageSize = pageSize });
         }
 
+        public async Task<Contact> GetContactAsync(int contactID)
+        {
+            return await _sqlClient.RunSpReturnSingle<Contact>("spGetContact", new { ContactID = contactID });
+        }
+
         public async Task<Contact> InsertContactAsync(Contact contact) {
             return await _sqlClient.RunSpReturnSingle<Contact>("spInsertContact", new { FirstName = contact.FirstName, LastName = contact.LastName } );
         }

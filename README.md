@@ -4,9 +4,13 @@ This repository holds the example defining server side development standards for
 
 ## Principles
 
-```bash
-code example
-```
-1. One
-2. Two
-3. Three
+1. Stateless services
+2. Keep it simple - crud services have no domain model, just a repository
+3. Composition over inheritence
+
+## Technologies
+
+- ORM: Dapper
+- IoC: Autofac ?
+- Unit Testing: Xunit
+- Middleware: WebApi

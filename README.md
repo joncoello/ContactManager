@@ -19,7 +19,7 @@ This repository holds the example defining server side development standards for
 - Middleware: WebApi
 
 Use paging extension in controller
-```bash
+```CSharp
 int offset = page * pageSize;
 var results = await _contactRepository.GetContactsAsync(offset, pageSize);
             

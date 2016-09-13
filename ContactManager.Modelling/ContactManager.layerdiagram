@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="35f054ea-540e-4950-9600-bd6961d3a214" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="12fa1b80-edaf-4ac5-b543-6c76e50e8b19" name="API">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="7e6b4f76-394a-44d6-af1c-446fe9dd30c1" direction="Forward">
+          <layerMoniker Id="b239639d-acda-412c-ad47-32de3a0b4714" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="1bf98cf1-2509-4388-bf26-42b19ef56dd0" direction="Forward">
+          <layerMoniker Id="d8d3c844-dec5-44b0-bc38-5687cf4f8cf0" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="3690fa68-f6d5-4089-9170-bced763586dc" name="ContactManager.API">
+          <ArtifactNode Label="ContactManager.API" Category="CodeSchema_Project" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2015/Projects/ContactManager/ContactManager.API/ContactManager.API.csproj&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=ContactManager.API)" Label="ContactManager.API.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="d8d3c844-dec5-44b0-bc38-5687cf4f8cf0" name="DomainModel">
+      <references>
+        <reference Id="9e827f92-a156-4b43-bcbe-9b118a38e98b" name="ContactManager.DomainModel">
+          <ArtifactNode Label="ContactManager.DomainModel" Category="CodeSchema_Project" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2015/Projects/ContactManager/ContactManager.DomainModel/ContactManager.DomainModel.csproj&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=ContactManager.DomainModel)" Label="ContactManager.DomainModel.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="b239639d-acda-412c-ad47-32de3a0b4714" name="SqlRepositories">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="f4394bdd-cf65-4ec5-b70a-80f40969103b" direction="Forward">
+          <layerMoniker Id="d8d3c844-dec5-44b0-bc38-5687cf4f8cf0" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="5b59ad89-ee28-4b8a-af06-74095d9015de" name="ContactManager.SqlRepositories">
+          <ArtifactNode Label="ContactManager.SqlRepositories" Category="CodeSchema_Project" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2015/Projects/ContactManager/ContactManager.SqlRepositories/ContactManager.SqlRepositories.csproj&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=ContactManager.SqlRepositories)" Label="ContactManager.SqlRepositories.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+  </layers>
+</layerModel>

@@ -22,6 +22,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ContactManager.Modelling", "ContactManager.Modelling\ContactManager.Modelling.modelproj", "{8DBB6A03-E5A2-4177-A49A-3FAED6C8FBB5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +60,10 @@ Global
 		{1A41EC29-BF29-45D0-AA38-141D5919B462}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A41EC29-BF29-45D0-AA38-141D5919B462}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A41EC29-BF29-45D0-AA38-141D5919B462}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DBB6A03-E5A2-4177-A49A-3FAED6C8FBB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DBB6A03-E5A2-4177-A49A-3FAED6C8FBB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DBB6A03-E5A2-4177-A49A-3FAED6C8FBB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DBB6A03-E5A2-4177-A49A-3FAED6C8FBB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

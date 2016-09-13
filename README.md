@@ -9,6 +9,7 @@ This repository holds the example defining server side development standards for
 3. Composition over inheritence
 4. Paging for lists - limit list of data with links to next, prev
 5. Ioc the IoC container :)
+6. Onion architecture - domain model has no dependencies, repo and api and host on outside
 
 ## Technologies
 

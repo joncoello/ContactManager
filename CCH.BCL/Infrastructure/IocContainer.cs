@@ -35,9 +35,9 @@ namespace CCH.BCL.Infrastructure {
         }
 
         public void RegisterSqlClient(string connectionString) {
-            builder.RegisterType<SQLClient>()
+            builder.RegisterType<TransientFaultHandlingSQLClient>()
                 .As<ISQLClient>()
-                .WithParameter("connectionString", connectionString);
+                .WithParameter("client", new SQLClient(connectionString));
         }
 
         public void RegisterType<T>() {

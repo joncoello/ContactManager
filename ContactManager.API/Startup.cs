@@ -27,7 +27,7 @@ namespace ContactManager.API {
             app.UseCchWebApi(
                 connectionString: connectionString,
                 httpConfig: config,
-                controllersAssembly: this.GetType().Assembly,
+                controllersAssembly: this.GetType().Assembly, // loaded in to current app domain or via MEF so maybe not required?
                 typesToRegister:
                     typeof(ContactRepository)
                 );

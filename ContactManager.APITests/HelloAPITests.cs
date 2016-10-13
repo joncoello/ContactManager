@@ -1,5 +1,4 @@
-﻿using CCH.BCL.Test;
-using ContactManager.API;
+﻿using ContactManager.API;
 using Microsoft.Owin.Hosting;
 using System;
 using System.Collections.Generic;

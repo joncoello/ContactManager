@@ -1,57 +1,57 @@
-﻿using System;
-using Microsoft.Owin.Hosting;
-using ContactManager.API;
-using System.Net.Http;
-using Xunit;
-//using CCH.BCL.Test;
-using System.Net;
-using Newtonsoft.Json;
-using ContactManager.DomainModel.Models;
-using System.Configuration;
+﻿//using System;
+//using Microsoft.Owin.Hosting;
+//using ContactManager.API;
+//using System.Net.Http;
+//using Xunit;
+////using CCH.BCL.Test;
+//using System.Net;
+//using Newtonsoft.Json;
+//using ContactManager.DomainModel.Models;
+//using System.Configuration;
 
-namespace ContactManager.APITests {
+//namespace ContactManager.APITests {
     
-    public class ContactAPITests {
-        
-        //[Fact, UseDatabase]
-        //public void API_Contact_CreateThenGet() {
+//    public class ContactAPITests {
 
-        //    string baseAddress = "http://localhost:9000/";
+//        [Fact, UseDatabase]
+//        public void API_Contact_CreateThenGet() {
 
-        //    using (WebApp.Start<Startup>(baseAddress)) {
+//            string baseAddress = "http://localhost:9000/";
 
-        //        var client = new HttpClient();
+//            using (WebApp.Start<Startup>(baseAddress)) {
 
-        //        // create
-        //        var newContact = new Contact {
-        //            FirstName = "Greg",
-        //            LastName = "Francis"
-        //        };
+//                var client = new HttpClient();
 
-        //        var json = JsonConvert.SerializeObject(newContact);
+//                // create
+//                var newContact = new Contact {
+//                    FirstName = "Greg",
+//                    LastName = "Francis"
+//                };
 
-        //        var response = client.PostAsync(baseAddress + "api/contact", new StringContent(json, System.Text.ASCIIEncoding.ASCII, "application/json")).Result;
+//                var json = JsonConvert.SerializeObject(newContact);
 
-        //        Assert.Equal(HttpStatusCode.Created, response.StatusCode);
+//                var response = client.PostAsync(baseAddress + "api/contact", new StringContent(json, System.Text.ASCIIEncoding.ASCII, "application/json")).Result;
 
-        //        var createdJson = response.Content.ReadAsStringAsync().Result;
+//                Assert.Equal(HttpStatusCode.Created, response.StatusCode);
 
-        //        var createdContact = JsonConvert.DeserializeObject<Contact>(createdJson);
+//                var createdJson = response.Content.ReadAsStringAsync().Result;
 
-        //        // get
-        //        var getResponse = client.GetAsync(baseAddress + "api/contact/" + createdContact.ContactID.ToString()).Result;
+//                var createdContact = JsonConvert.DeserializeObject<Contact>(createdJson);
 
-        //        Assert.Equal(HttpStatusCode.OK, getResponse.StatusCode);
+//                // get
+//                var getResponse = client.GetAsync(baseAddress + "api/contact/" + createdContact.ContactID.ToString()).Result;
 
-        //        var getJson = getResponse.Content.ReadAsStringAsync().Result;
+//                Assert.Equal(HttpStatusCode.OK, getResponse.StatusCode);
 
-        //        // test
-        //        Assert.Equal(createdJson, getJson);
+//                var getJson = getResponse.Content.ReadAsStringAsync().Result;
 
-        //    }
+//                // test
+//                Assert.Equal(createdJson, getJson);
 
-        //}
+//            }
 
-    }
+//        }
 
-}
+//    }
+
+//}

@@ -1,50 +1,55 @@
-﻿//using System;
-//using ContactManager.SqlRepositories;
-//using System.Threading.Tasks;
-//using CCH.BCL.Data;
-//using Xunit;
+﻿using System;
+using ContactManager.SqlRepositories;
+using System.Threading.Tasks;
+using CCH.BCL.Data;
+using Xunit;
 
-//namespace ContactManager.SqlRepositoriesTests {
+namespace ContactManager.SqlRepositoriesTests {
 
-//    public class ContactRepositoryTests {
+    public class ContactRepositoryTests {
 
-//        [Fact]
-//        public async Task Repo_GetContacts_ReturnsList() {
+        [Fact]
+        public void XunitIsRunning() {
+            // no code needed
+        }
 
-//            var sut = BuildContactRepository();
+        //[Fact]
+        //public async Task Repo_GetContacts_ReturnsList() {
 
-//            var results = await sut.GetContactsAsync(0, 20);
+        //    var sut = BuildContactRepository();
 
-//            Assert.NotNull(results);
+        //    var results = await sut.GetContactsAsync(0, 20);
 
-//        }
+        //    Assert.NotNull(results);
 
-//        [Fact]
-//        public async Task Repo_InsertContact_UpdatesID() {
+        //}
 
-//            var sut = BuildContactRepository();
+        //[Fact]
+        //public async Task Repo_InsertContact_UpdatesID() {
 
-//            var result = await sut.InsertContactAsync(new DomainModel.Models.Contact() {
-//                FirstName = "Brian",
-//                LastName = "White"
-//            });
+        //    var sut = BuildContactRepository();
 
-//            Assert.NotEqual(0, result.ContactID);
+        //    var result = await sut.InsertContactAsync(new DomainModel.Models.Contact() {
+        //        FirstName = "Brian",
+        //        LastName = "White"
+        //    });
 
-//        }
+        //    Assert.NotEqual(0, result.ContactID);
 
-//        private ContactRepository BuildContactRepository() {
+        //}
 
-//            string connectionString = "server = . ; database = ContactManager ; user id = sa ; pwd = Afpftcb1td";
+        //private ContactRepository BuildContactRepository() {
 
-//            var sqlClient = new CCH.BCL.Data.SQLClient(connectionString);
+        //    string connectionString = "server = . ; database = ContactManager ; user id = sa ; pwd = Afpftcb1td";
 
-//            var sut = new ContactRepository(sqlClient);
+        //    var sqlClient = new CCH.BCL.Data.SQLClient(connectionString);
 
-//            return sut;
+        //    var sut = new ContactRepository(sqlClient);
 
-//        }
+        //    return sut;
 
-//    }
+        //}
 
-//}
+    }
+
+}

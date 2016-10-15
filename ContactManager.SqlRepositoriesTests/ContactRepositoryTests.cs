@@ -1,50 +1,50 @@
-﻿using System;
-using ContactManager.SqlRepositories;
-using System.Threading.Tasks;
-using CCH.BCL.Data;
-using Xunit;
+﻿//using System;
+//using ContactManager.SqlRepositories;
+//using System.Threading.Tasks;
+//using CCH.BCL.Data;
+//using Xunit;
 
-namespace ContactManager.SqlRepositoriesTests {
+//namespace ContactManager.SqlRepositoriesTests {
 
-    public class ContactRepositoryTests {
+//    public class ContactRepositoryTests {
 
-        [Fact]
-        public async Task Repo_GetContacts_ReturnsList() {
+//        [Fact]
+//        public async Task Repo_GetContacts_ReturnsList() {
 
-            var sut = BuildContactRepository();
+//            var sut = BuildContactRepository();
 
-            var results = await sut.GetContactsAsync(0, 20);
+//            var results = await sut.GetContactsAsync(0, 20);
 
-            Assert.NotNull(results);
+//            Assert.NotNull(results);
 
-        }
+//        }
 
-        [Fact]
-        public async Task Repo_InsertContact_UpdatesID() {
+//        [Fact]
+//        public async Task Repo_InsertContact_UpdatesID() {
 
-            var sut = BuildContactRepository();
+//            var sut = BuildContactRepository();
 
-            var result = await sut.InsertContactAsync(new DomainModel.Models.Contact() {
-                FirstName = "Brian",
-                LastName = "White"
-            });
+//            var result = await sut.InsertContactAsync(new DomainModel.Models.Contact() {
+//                FirstName = "Brian",
+//                LastName = "White"
+//            });
 
-            Assert.NotEqual(0, result.ContactID);
+//            Assert.NotEqual(0, result.ContactID);
 
-        }
+//        }
 
-        private ContactRepository BuildContactRepository() {
+//        private ContactRepository BuildContactRepository() {
 
-            string connectionString = "server = . ; database = ContactManager ; user id = sa ; pwd = Afpftcb1td";
+//            string connectionString = "server = . ; database = ContactManager ; user id = sa ; pwd = Afpftcb1td";
 
-            var sqlClient = new CCH.BCL.Data.SQLClient(connectionString);
+//            var sqlClient = new CCH.BCL.Data.SQLClient(connectionString);
 
-            var sut = new ContactRepository(sqlClient);
+//            var sut = new ContactRepository(sqlClient);
 
-            return sut;
+//            return sut;
 
-        }
+//        }
 
-    }
+//    }
 
-}
+//}
